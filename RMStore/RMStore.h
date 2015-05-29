@@ -31,6 +31,16 @@ extern NSInteger const RMStoreErrorCodeDownloadCanceled;
 extern NSInteger const RMStoreErrorCodeUnknownProductIdentifier;
 extern NSInteger const RMStoreErrorCodeUnableToCompleteVerification;
 
+extern NSString* const RMStoreNotificationInvalidProductIdentifiers;
+extern NSString* const RMStoreNotificationDownloadProgress;
+extern NSString* const RMStoreNotificationProductIdentifier;
+extern NSString* const RMStoreNotificationProducts;
+extern NSString* const RMStoreNotificationStoreDownload;
+extern NSString* const RMStoreNotificationStoreError;
+extern NSString* const RMStoreNotificationStoreReceipt;
+extern NSString* const RMStoreNotificationTransaction;
+extern NSString* const RMStoreNotificationTransactions;
+
 /** A StoreKit wrapper that adds blocks and notifications, plus optional receipt verification and purchase management.
  */
 @interface RMStore : NSObject<SKPaymentTransactionObserver>
@@ -206,6 +216,7 @@ extern NSInteger const RMStoreErrorCodeUnableToCompleteVerification;
 @protocol RMStoreTransactionPersistor<NSObject>
 
 - (void)persistTransaction:(SKPaymentTransaction*)transaction;
+- (BOOL)isPurchasedProductOfIdentifier:(NSString*)productIdentifier;
 
 @end
 
