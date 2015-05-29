@@ -32,9 +32,7 @@
     self.title = NSLocalizedString(@"Store", @"");
     
 #warning Replace with your product ids.
-    _products = @[@"net.robotmedia.test.consumable",
-                  @"net.robotmedia.test.nonconsumable",
-                  @"net.robotmedia.test.nonconsumable.2"];
+    _products = @[@"com.hansoninteractive.gumdrops.freestarterpack"];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [[RMStore defaultStore] requestProducts:[NSSet setWithArray:_products] success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
